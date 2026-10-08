@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Employee Management</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Employee Management System</h1>
+        <p class="subtitle">Manage employee information</p>
+
+        <div id="alertContainer"></div>
+
+        <div class="toolbar">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search employees..."
+            >
+
+            <button class="add-button" onclick="openEmployeeForm()">
+                + Add Employee
+            </button>
+        </div>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Department</th>
+                        <th>Designation</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="employeeTableBody">
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- Employee Form -->
+
+    <div id="employeeModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeEmployeeForm()">&times;</span>
+
+            <h2 id="formTitle">Add Employee</h2>
+
+            <form id="employeeForm">
+
+                <input type="hidden" id="employeeId">
+
+                <label>First Name</label>
+                <input type="text" id="firstName" required>
+
+                <label>Last Name</label>
+                <input type="text" id="lastName" required>
+
+                <label>Email</label>
+                <input type="email" id="email" required>
+
+                <label>Phone</label>
+                <input type="text" id="phone">
+
+                <label>Department</label>
+                <input type="text" id="department" required>
+
+                <label>Designation</label>
+                <input type="text" id="designation" required>
+
+                <label>Salary</label>
+                <input type="number" id="salary">
+
+                <label>Joining Date</label>
+                <input type="date" id="joiningDate" required>
+
+                <label class="checkbox-label">
+                    <input type="checkbox" id="isActive" checked>
+                    Active Employee
+                </label>
+
+                <div class="form-buttons">
+
+                    <button
+                        type="button"
+                        class="cancel-button"
+                        onclick="closeEmployeeForm()"
+                    >
+                        Cancel
+                    </button>
+
+                    <button type="submit" class="save-button">
+                        Save Employee
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
